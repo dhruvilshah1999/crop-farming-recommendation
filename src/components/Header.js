@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, IconButton, Toolbar, Collapse } from '@material-ui/core';
 import SortIcon from '@material-ui/icons/Sort';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Link as Scroll } from 'react-scroll';
-import { MobileFriendly } from '@material-ui/icons';
+import { Button } from '@material-ui/core';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,6 +44,14 @@ const useStyles = makeStyles((theme) => ({
     color: '#5AFF3D',
     fontSize: '4rem',
   },
+  gr: {
+    color: '#1d3b1a',
+    fontSize: '2rem',
+    top: 350,
+    left:1,
+    textAlign: 'center',
+
+  },
 }));
 export default function Header() {
   const classes = useStyles();
@@ -78,13 +85,26 @@ export default function Header() {
             Crop Farming 
               <br/>Recommendation System.</span> 
           </h1>
-          <Scroll to="place-to-visit" smooth={true}>
-            <IconButton>
-              <ExpandMoreIcon className={classes.goDown} />
-            </IconButton>
-          </Scroll>
         </div>
       </Collapse>
+      &nbsp;
+    
+      <div>
+      <div className={classes.gr} >
+        <a href="https://www.google.com/" target="_blank">         
+        <Button className={classes.gr} color='green' variant='contained' backgroundcolor='green' ><b>Get Recommendation</b></Button></a> 
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+
+<Button left='100px' className={classes.gr} color='green' variant='contained' backgroundcolor='green' 
+        ><b>More Information</b></Button>
+        
+      
+      </div>
+      </div>
     </div>
   );
 }   
